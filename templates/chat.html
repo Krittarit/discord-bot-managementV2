@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}สนทนากับบอท - ระบบจัดการบอท Discord{% endblock %}
+
+{% block head %}
+<style>
+    .chat-container {
+        height: calc(100vh - 280px);
+        overflow-y: auto;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    .chat-message {
+        margin-bottom: 15px;
+        max-width: 70%;
+        clear: both;
+    }
+    .chat-message.user {
+        float: right;
+        background-color: #0d6efd;
+        color: white;
+        border-radius: 15px 15px 0 15px;
+        padding: 10px;
+    }
+    .chat-message.bot {
+        float: left;
+        background-color: #e9ecef;
+        border-radius: 15px 15px 15px 0;
+        padding: 10px;
+    }
+    .chat-input-container {
+        display: flex;
+        align-items: center;
+    }
+    .chat-input {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+    .chat-time {
+        font-size: 0.8em;
+        color: #6c757d;
+        margin-top: 5px;
+    }
+    .debug-container {
+        font-size: 0.9em;
+        color: #6c757d;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2><i class="fas fa-comment-dots"></i> สนทนากับบอท</h2>
+    <div>
+        <button id="clear-chat" class="btn btn-danger">
+            <i class="fas fa-trash"></i> ล้างแชท
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">แชทกับบอท</h5>
+    </div>
+    <div class="card-body">
+        <div class="chat-container" id="chat-container">
+            <div id="chat-loading" class="text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">กำลังโหลด...</span>
+                </div>
+                <p class="mt-2">กำลังเริ่มการสนทนา...</p>
+            </div>
+            <div id="chat-content"></div>
+        </div>
+        <div class="debug-container">
+            <p><strong>คำที่ตัด:</strong> <span id="tokenized-words">ไม่มี</span></p>
+            <p><strong>เจตนาที่ตรวจพบ:</strong> <span id="detected-intent">ไม่มี</span></p>
+            <p><strong>สินค้าที่แนะนำ:</strong> <span id="recommended-product">ไม่มี</span></p>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" class="form-control chat-input" placeholder="พิมพ์ข้อความถึงบอท...">
+            <button id="send-message" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> ส่ง
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        // โหลดแชทเมื่อหน้าโหลด
+        $('#chat-loading').show();
+        $('#chat-content').hide();
+    
+        setTimeout(() => {
+            $('#chat-loading').hide();
+            $('#chat-content').show();
+        }, 500);
+    
+        // ส่งข้อความเมื่อกดปุ่ม
+        $('#send-message').click(function() {
+            sendMessage();
+        });
+    
+        // ส่งข้อความเมื่อกด Enter
+        $('#chat-input').keypress(function(e) {
+            if (e.which === 13) {
+                sendMessage();
+            }
+        });
+    
+        // ล้างแชท
+        $('#clear-chat').click(function() {
+            if (confirm('คุณแน่ใจหรือไม่ที่จะล้างประวัติแชท?')) {
+                $('#chat-content').empty();
+                $('#tokenized-words').text('ไม่มี');
+                $('#detected-intent').text('ไม่มี');
+                $('#recommended-product').text('ไม่มี');
+            }
+        });
+    
+        function sendMessage() {
+            const input = $('#chat-input');
+            const message = input.val().trim();
+            if (!message) return;
+    
+            // แสดงข้อความของผู้ใช้
+            const userMessage = $('<div class="chat-message user"></div>').text(message);
+            const userTime = $('<div class="chat-time user"></div>').text(new Date().toLocaleTimeString('th-TH'));
+            $('#chat-content').append(userMessage, userTime);
+            input.val('');
+    
+            // เลื่อนลงไปที่ข้อความล่าสุด
+            $('.chat-container').scrollTop($('.chat-container')[0].scrollHeight);
+    
+            // ส่งข้อความไปยังเซิร์ฟเวอร์
+            $.ajax({
+                url: '/api/chat',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ message: message }),
+                success: function(response) {
+                    if (response.success) {
+                        const botMessage = $('<div class="chat-message bot"></div>').text(response.reply);
+                        const botTime = $('<div class="chat-time bot"></div>').text(new Date().toLocaleTimeString('th-TH'));
+                        $('#chat-content').append(botMessage, botTime);
+                        $('#tokenized-words').text(response.tokens ? response.tokens.join(', ') : 'ไม่มี');
+                        $('#detected-intent').text(response.intent || 'ไม่มี');
+                        $('#recommended-product').text(response.product_name || 'ไม่มี');
+                        $('.chat-container').scrollTop($('.chat-container')[0].scrollHeight);
+                    } else {
+                        const errorMessage = $('<div class="chat-message bot"></div>').text('เกิดข้อผิดพลาด: ' + response.message);
+                        $('#chat-content').append(errorMessage);
+                        $('.chat-container').scrollTop($('.chat-container')[0].scrollHeight);
+                    }
+                },
+                error: function(xhr) {
+                    const errorMessage = $('<div class="chat-message bot"></div>').text('ไม่สามารถเชื่อมต่อกับบอทได้');
+                    $('#chat-content').append(errorMessage);
+                    $('.chat-container').scrollTop($('.chat-container')[0].scrollHeight);
+                }
+            });
+        }
+    });
+    </script>
+{% endblock %}
