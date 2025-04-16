@@ -2,6 +2,7 @@ import sqlite3
 import json
 import logging
 from sentence_transformers import SentenceTransformer, util
+from pythainlp import word_tokenize
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

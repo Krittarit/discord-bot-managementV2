@@ -15,9 +15,8 @@ import asyncio
 import threading
 from threading import Lock
 from dotenv import load_dotenv
-from nlp_processor import process_text
+from nlp_processor import process_text, load_config, save_config
 
-# ตั้งค่า locale ให้รองรับภาษาไทย
 try:
     locale.setlocale(locale.LC_ALL, 'th_TH.UTF-8')
 except:
@@ -26,11 +25,9 @@ except:
     except:
         pass
 
-# ยกเว้น HTTPS สำหรับ OAuth2 (ใช้ในการพัฒนาเท่านั้น)
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 load_dotenv()
 
-# ตั้งค่า logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -41,7 +38,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Discord OAuth2 settings
 OAUTH2_CLIENT_ID = os.getenv('DISCORD_CLIENT_ID')
 OAUTH2_CLIENT_SECRET = os.getenv('DISCORD_CLIENT_SECRET', '').strip()
 OAUTH2_REDIRECT_URI = os.getenv('OAUTH2_REDIRECT_URI', 'http://localhost:5000/callback').strip()
@@ -50,7 +46,6 @@ AUTHORIZATION_BASE_URL = 'https://discord.com/api/oauth2/authorize'
 TOKEN_URL = 'https://discord.com/api/oauth2/token'
 API_BASE_URL = 'https://discord.com/api'
 
-# ตั้งค่า Discord bot
 TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.default()
 intents.guilds = True
@@ -58,14 +53,12 @@ intents.messages = True
 intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-# สร้าง Flask app
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "default_secret_key_replace_this")
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SESSION_FILE_DIR'] = './.flask_session/'
 Session(app)
 
-# ตั้งค่าตัวแปรสำหรับเก็บข้อมูลการตั้งค่า
 CONFIG_FILE = 'config.json'
 DEFAULT_CONFIG = {
     "categories": {},
@@ -81,7 +74,6 @@ DEFAULT_CONFIG = {
 
 config = DEFAULT_CONFIG.copy()
 
-# คลาสสำหรับจัดการล็อก
 class LogHandler(logging.Handler):
     def __init__(self):
         super().__init__()
@@ -137,16 +129,6 @@ def load_config():
         logger.error(f"Error loading config: {str(e)}")
         config = DEFAULT_CONFIG.copy()
 
-def save_config():
-    try:
-        with open(CONFIG_FILE, 'w', encoding='utf-8') as f:
-            json.dump(config, f, ensure_ascii=False, indent=4)
-        logger.info("Saved config to config.json successfully")
-    except Exception as e:
-        logger.error(f"Error saving config: {str(e)}")
-        raise
-
-# Discord Bot Event Handlers
 @bot.event
 async def on_ready():
     logger.info(f"บอทเริ่มทำงานแล้ว: {bot.user.name}#{bot.user.discriminator}")
@@ -161,12 +143,10 @@ async def on_message(message):
     if message.author == bot.user:
         return
     
-    # ตรวจสอบว่าเป็นคำสั่งหรือไม่
     if message.content.startswith(bot.command_prefix):
         await bot.process_commands(message)
         return
     
-    # ประมวลผลข้อความด้วย NLP
     user_id = str(message.author.id)
     result = process_text(message.content, user_id)
     await message.channel.send(result["response"])
@@ -196,7 +176,7 @@ async def process_new_channel(channel):
                     if backup_category_id:
                         try:
                             backup_category = bot.get_channel(int(backup_category_id))
-                            if backup_category and isinstance(backup_category, discord.CategoryChannel):
+                            if backup_category and isinstance(category, discord.CategoryChannel):
                                 await channel.edit(category=backup_category)
                                 logger.info(f"ย้ายช่อง {channel.name} ไปยัง Category สำรอง {backup_category.name}")
                                 return
@@ -222,7 +202,7 @@ async def update_categories_info():
                     return
             categories = {str(category.id): category.name for category in guild.categories}
             config["categories"] = categories
-            save_config()
+            save_config(config)
             logger.info("อัปเดตข้อมูลหมวดหมู่และบันทึกลง config.json สำเร็จ")
         except Exception as e:
             logger.error(f"เกิดข้อผิดพลาดในการอัปเดตข้อมูลหมวดหมู่: {str(e)}")
@@ -283,7 +263,6 @@ def create_command_function(cmd_name, response, should_change, allow_additional_
 
 @bot.command()
 async def scan_channels(ctx):
-    """สแกนและย้ายช่องทั้งหมดตามการตั้งค่าคำสำคัญอัตโนมัติ"""
     try:
         guild = ctx.guild
         moved_channels = 0
@@ -304,7 +283,23 @@ async def scan_channels(ctx):
         logger.error(f"เกิดข้อผิดพลาดในคำสั่ง !scan_channels: {str(e)}")
         await ctx.send(f"❌ เกิดข้อผิดพลาด: {str(e)}")
 
-# OAuth2 Helper Functions
+@bot.command()
+async def teach(ctx, intent: str, *, response: str):
+    try:
+        config = load_config()
+        if intent not in config["intents"]:
+            config["intents"][intent] = {"keywords": [], "responses": []}
+        if response not in config["intents"][intent]["responses"]:
+            config["intents"][intent]["responses"].append(response)
+            save_config(config)
+            logger.info(f"Added response '{response}' to intent '{intent}' via !teach command")
+            await ctx.send(f"✅ สอนบอทสำเร็จ! เพิ่มคำตอบ '{response}' สำหรับเจตนา '{intent}'")
+        else:
+            await ctx.send(f"⚠️ คำตอบ '{response}' มีอยู่แล้วในเจตนา '{intent}'")
+    except Exception as e:
+        logger.error(f"เกิดข้อผิดพลาดในคำสั่ง !teach: {str(e)}")
+        await ctx.send(f"❌ เกิดข้อผิดพลาด: {str(e)}")
+
 def token_updater(token):
     session['oauth2_token'] = token
 
@@ -323,7 +318,6 @@ def make_session(token=None, state=None, scope=None):
         token_updater=token_updater
     )
 
-# Flask Routes - Authentication
 @app.route('/login')
 def login():
     scope = ['identify', 'guilds']
@@ -362,7 +356,6 @@ def logout():
     session.pop('oauth2_token', None)
     return redirect(url_for('index'))
 
-# Flask Routes - Main Pages
 @app.route('/')
 def index():
     if 'oauth2_token' in session:
@@ -446,7 +439,6 @@ def chat():
         return redirect(url_for('login'))
     return render_template('chat.html')
 
-# Flask Routes - Settings
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
     if request.method == 'POST':
@@ -461,7 +453,7 @@ def settings():
                         new_messages[cmd]["allow_additional_text"] = False
                 config['messages'] = new_messages
                 asyncio.run_coroutine_threadsafe(register_commands(), bot.loop)
-            save_config()
+            save_config(config)
             flash("บันทึกการตั้งค่าเรียบร้อยแล้ว", "success")
             asyncio.run_coroutine_threadsafe(update_categories_info(), bot.loop)
             return redirect(url_for('settings'))
@@ -478,7 +470,7 @@ def category_settings():
             if 'category_mapping' in request.form:
                 new_mapping = json.loads(request.form['category_mapping'])
                 config['category_mapping'] = new_mapping
-                save_config()
+                save_config(config)
                 flash("บันทึกการตั้งค่าหมวดหมู่เรียบร้อยแล้ว", "success")
                 asyncio.run_coroutine_threadsafe(update_categories_info(), bot.loop)
                 return redirect(url_for('category_settings'))
@@ -498,7 +490,7 @@ def command_settings():
                     if "allow_additional_text" not in new_messages[cmd]:
                         new_messages[cmd]["allow_additional_text"] = False
                 config['messages'] = new_messages
-                save_config()
+                save_config(config)
                 flash("บันทึกการตั้งค่าคำสั่งเรียบร้อยแล้ว", "success")
                 asyncio.run_coroutine_threadsafe(register_commands(), bot.loop)
                 return redirect(url_for('command_settings'))
@@ -516,7 +508,7 @@ def intent_settings():
                 new_intents = json.loads(request.form['intents'])
                 logger.info(f"Received intents: {new_intents}")
                 config['intents'] = new_intents
-                save_config()
+                save_config(config)
                 flash("บันทึกการตั้งค่าเจตนาเรียบร้อยแล้ว", "success")
             else:
                 logger.warning("No intents found in form data")
@@ -528,7 +520,6 @@ def intent_settings():
             return redirect(url_for('intent_settings'))
     return render_template('intent_settings.html', config=config, now=datetime.datetime.now())
 
-# Flask Routes - API Endpoints
 @app.route('/api/logs')
 def api_logs():
     page = int(request.args.get('page', 1))
@@ -564,7 +555,7 @@ def update_category_mapping():
         if category_name not in config["category_mapping"]:
             config["category_mapping"][category_name] = {"category_id_1": "", "category_id_2": "", "keywords": []}
         config["category_mapping"][category_name].update({k: data[k] for k in data if k in ["category_id_1", "category_id_2", "keywords"]})
-        save_config()
+        save_config(config)
         return jsonify({"success": True, "message": "อัปเดตหมวดหมู่สำเร็จ"})
     except Exception as e:
         logger.error(f"เกิดข้อผิดพลาดในการอัปเดตหมวดหมู่: {str(e)}")
@@ -575,7 +566,7 @@ def delete_category_mapping(category_name):
     try:
         if category_name in config["category_mapping"]:
             del config["category_mapping"][category_name]
-            save_config()
+            save_config(config)
             return jsonify({"success": True, "message": f"ลบหมวดหมู่ {category_name} สำเร็จ"})
         return jsonify({"success": False, "message": "ไม่พบหมวดหมู่นี้"})
     except Exception as e:
@@ -598,7 +589,7 @@ def update_messages():
             "change_channel": data.get("change_channel", False),
             "allow_additional_text": data.get("allow_additional_text", False)
         }
-        save_config()
+        save_config(config)
         asyncio.run_coroutine_threadsafe(register_commands(), bot.loop)
         return jsonify({"success": True, "message": f"อัปเดตคำสั่ง !{command_name} สำเร็จ"})
     except Exception as e:
@@ -611,7 +602,7 @@ def delete_message(command_name):
         command_name = command_name.lstrip('!')
         if command_name in config["messages"]:
             del config["messages"][command_name]
-            save_config()
+            save_config(config)
             asyncio.run_coroutine_threadsafe(register_commands(), bot.loop)
             return jsonify({"success": True, "message": f"ลบคำสั่ง !{command_name} สำเร็จ"})
         return jsonify({"success": False, "message": "ไม่พบคำสั่งนี้"})
@@ -636,7 +627,7 @@ def update_intents():
             "keywords": data.get("keywords", []),
             "responses": data.get("responses", [])
         })
-        save_config()
+        save_config(config)
         return jsonify({"success": True, "message": f"อัปเดตเจตนา {intent_name} สำเร็จ"})
     except Exception as e:
         logger.error(f"Error updating intents: {str(e)}")
@@ -647,7 +638,7 @@ def delete_intent(intent_name):
     try:
         if intent_name in config["intents"]:
             del config["intents"][intent_name]
-            save_config()
+            save_config(config)
             return jsonify({"success": True, "message": f"ลบเจตนา {intent_name} สำเร็จ"})
         return jsonify({"success": False, "message": "ไม่พบเจตนานี้"})
     except Exception as e:
@@ -686,10 +677,8 @@ def chat_with_bot():
         message = data['message']
         user_id = session.get('oauth2_token', {}).get('user_id', 'web_user')
         
-        # ใช้ NLP ที่พัฒนาเอง
         result = process_text(message, user_id)
         
-        # ดึงข้อมูลสินค้าจาก config ถ้ามี
         config = load_config()
         product_name = None
         if result.get("product_id"):
@@ -711,7 +700,6 @@ def chat_with_bot():
 def server_status():
     return jsonify({'online': True})
 
-# Main Function
 def run_bot():
     try:
         print(f"Starting bot with TOKEN: {TOKEN[:10]}...")

@@ -6,7 +6,6 @@ import random
 from difflib import SequenceMatcher
 import logging
 
-# ตั้งค่า logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -17,7 +16,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# โหลด config.json
 CONFIG_FILE = 'config.json'
 
 def load_config():
@@ -34,7 +32,6 @@ def load_config():
             with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
                 config = json.load(f)
                 logger.info("Loaded config.json successfully")
-                # ตรวจสอบว่า intents มี unknown
                 if "intents" not in config:
                     config["intents"] = default_config["intents"]
                 elif "unknown" not in config["intents"]:
@@ -49,11 +46,17 @@ def load_config():
     logger.warning("config.json not found, using default config")
     return default_config
 
+def save_config(config):
+    try:
+        with open(CONFIG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(config, f, ensure_ascii=False, indent=4)
+        logger.info("Saved config.json successfully")
+    except Exception as e:
+        logger.error(f"Error saving config.json: {e}")
+
 def initialize_database():
     conn = sqlite3.connect('chat_history.db')
     cursor = conn.cursor()
-    
-    # สร้างตารางถ้ายังไม่มี
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS chat_history (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -63,19 +66,14 @@ def initialize_database():
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     ''')
-    
-    # ตรวจสอบและเพิ่มคอลัมน์ intent ถ้ายังไม่มี
     cursor.execute("PRAGMA table_info(chat_history)")
     columns = [col[1] for col in cursor.fetchall()]
-    
     if 'intent' not in columns:
         cursor.execute('ALTER TABLE chat_history ADD COLUMN intent TEXT')
         logger.info("Added intent column to chat_history")
-    
     if 'product_id' not in columns:
         cursor.execute('ALTER TABLE chat_history ADD COLUMN product_id TEXT')
         logger.info("Added product_id column to chat_history")
-    
     conn.commit()
     conn.close()
 
@@ -129,35 +127,39 @@ def find_best_product(tokens, products):
             best_product = product
     return best_product
 
+def update_intent_keywords_and_responses(config, intent, tokens, response):
+    if intent == "unknown":
+        return
+    intent_data = config["intents"].get(intent, {"keywords": [], "responses": []})
+    # อัปเดต keywords
+    for token in tokens:
+        if len(token) > 2 and token not in intent_data["keywords"]:
+            intent_data["keywords"].append(token)
+            logger.info(f"Added keyword '{token}' to intent '{intent}'")
+    # อัปเดต responses (ถ้ามีการเรียนรู้จากบริบท)
+    if response and response not in intent_data["responses"]:
+        intent_data["responses"].append(response)
+        logger.info(f"Added response '{response}' to intent '{intent}'")
+    config["intents"][intent] = intent_data
+    save_config(config)
+
 def process_text(text, user_id='web_user'):
-    """
-    ประมวลผลข้อความด้วย PyThaiNLP และจับเจตนา
-    Args:
-        text: ข้อความจากผู้ใช้
-        user_id: ID ของผู้ใช้
-    Returns:
-        ผลลัพธ์ที่มีการตอบกลับและคำที่ตัด
-    """
     initialize_database()
     config = load_config()
     intents = config.get("intents", {})
     products = config.get("products", [])
 
-    # ตัดคำ
     tokens = word_tokenize(text, engine='newmm')
     logger.info(f"Tokenized input: {tokens}")
 
-    # ดึงบริบทล่าสุด
     context = get_recent_context(user_id)
     previous_intent = context[0][1] if context else None
     previous_product_id = context[0][2] if context else None
 
-    # ค้นหาสินค้าที่เกี่ยวข้อง
     matched_product = find_best_product(tokens, products)
     if not matched_product and previous_product_id:
         matched_product = next((p for p in products if p["id"] == previous_product_id), None)
 
-    # จับเจตนา
     best_intent = "unknown"
     best_score = 0
     for intent, data in intents.items():
@@ -172,12 +174,10 @@ def process_text(text, user_id='web_user'):
         if score > best_score:
             best_score = score
             best_intent = intent
-        # ให้ความสำคัญกับบริบท
         if intent == previous_intent and score >= best_score * 0.8:
             best_intent = intent
             best_score = score
 
-    # เลือกคำตอบ
     default_response = "ขอโทษค่ะ ฉันไม่แน่ใจว่าเข้าใจถูกมั้ย ลองบอกใหม่ได้มั้ยคะ? 😊"
     responses = intents.get(best_intent, {}).get("responses", [default_response])
     if not responses:
@@ -185,7 +185,6 @@ def process_text(text, user_id='web_user'):
     response = random.choice(responses)
     logger.info(f"Selected intent: {best_intent}, response: {response}")
 
-    # แทนที่ตัวแปรในคำตอบ
     if matched_product:
         response = response.format(
             product_name=matched_product["name"],
@@ -193,12 +192,13 @@ def process_text(text, user_id='web_user'):
             product_description=matched_product["description"]
         )
     else:
-        # ถ้าไม่มีสินค้าให้ลบตัวแปรที่อาจอยู่ในเทมเพลต
         response = response.replace("{product_name}", "สินค้าของเรา")
         response = response.replace("{product_price}", "ราคาดีๆ")
         response = response.replace("{product_description}", "ของเจ๋งๆ")
 
-    # บันทึกประวัติ
+    # อัปเดต keywords ทันที
+    update_intent_keywords_and_responses(config, best_intent, tokens, None)
+
     save_chat_message(
         user_id, text, response, best_intent,
         matched_product["id"] if matched_product else None

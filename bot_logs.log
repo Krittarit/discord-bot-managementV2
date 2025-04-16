@@ -5911,3 +5911,334 @@ discord.ext.commands.errors.CommandNotFound: Command "เกขุนฃ" is not
 2025-04-16 17:43:55,071 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:43:55] "GET /api/server-status HTTP/1.1" 200 -
 2025-04-16 17:44:56,087 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:44:56] "GET /api/server-status HTTP/1.1" 200 -
 2025-04-16 17:45:57,069 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:45:57] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:46:58,065 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:46:58] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:47:59,066 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:47:59] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:49:00,075 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:49:00] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:50:01,074 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:50:01] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:51:02,075 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:51:02] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:52:03,063 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:52:03] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:53:04,067 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:53:04] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:54:05,069 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:54:05] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:55:06,066 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:55:06] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:56:07,070 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:56:07] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:56:39,825 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 1f640a208d45a7dba7154da0dafcc924.
+2025-04-16 17:57:08,070 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:57:08] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:58:09,063 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:58:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 17:59:10,082 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 17:59:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:00:09,786 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:00:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:01:10,108 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:01:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:02:09,783 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:02:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:03:05,262 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:03:05] "[32mGET / HTTP/1.1[0m" 302 -
+2025-04-16 18:03:08,492 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:03:08] "GET /servers HTTP/1.1" 200 -
+2025-04-16 18:03:09,784 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:03:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:03:12,997 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:03:12] "GET /logs HTTP/1.1" 200 -
+2025-04-16 18:03:13,098 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:03:13] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:03:43,764 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:03:43] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:04:10,081 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:04:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:04:13,772 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:04:13] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:04:44,078 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:04:44] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:05:09,797 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:05:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:05:14,079 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:05:14] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:06:09,796 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:06:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:06:10,112 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:06:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:07:10,094 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:07:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:07:10,094 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:07:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:08:09,810 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:08:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:08:10,103 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:08:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:09:10,104 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:09:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:09:10,107 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:09:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:10:09,791 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:10:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:10:10,096 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:10:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:11:10,086 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:11:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:11:10,086 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:11:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:11:58,257 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:11:58] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:12:10,085 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:12:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:12:13,063 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:12:13] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:12:43,365 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:12:43] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:13:09,806 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:13:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:13:13,369 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:13:13] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:13:43,054 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:13:43] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:14:10,088 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:14:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:14:13,071 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:14:13] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:14:43,360 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:14:43] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:15:09,782 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:15:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:15:13,364 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:15:13] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:15:43,052 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:15:43] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:16:10,082 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:16:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:16:13,062 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:16:13] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:16:43,366 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:16:43] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:17:09,788 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:17:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:17:13,358 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:17:13] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:17:43,056 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:17:43] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:18:10,083 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:18:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:18:13,057 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:18:13] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:18:44,070 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:18:44] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:19:09,757 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:19:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:19:14,066 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:19:14] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 18:20:09,768 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:20:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 18:20:10,084 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 18:20:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:37:41,931 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-04-16 20:37:42,159 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 20:37:42,160 - __main__ - INFO - [STDOUT] Starting bot with TOKEN: MTM1OTE1MD...
+2025-04-16 20:37:42,160 - __main__ - INFO - [STDOUT] Using GUILD_ID: 1327283114258731151
+2025-04-16 20:37:42,160 - discord.client - INFO - logging in using static token
+2025-04-16 20:37:42,180 - __main__ - INFO - [STDOUT] * Serving Flask app 'app'
+2025-04-16 20:37:42,180 - __main__ - INFO - [STDOUT] * Debug mode: on
+2025-04-16 20:37:42,297 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 20:37:42,297 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-16 20:37:43,619 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f1ffa85053fb1fdbd478a2118d15af9b).
+2025-04-16 20:37:45,643 - __main__ - INFO - บอทเริ่มทำงานแล้ว: บอทสุดเก#4352
+2025-04-16 20:37:45,643 - __main__ - INFO - ลงทะเบียนคำสั่ง !เริ่ม สำเร็จ
+2025-04-16 20:37:45,644 - __main__ - INFO - ลงทะเบียนคำสั่ง !รอ สำเร็จ
+2025-04-16 20:37:45,644 - __main__ - INFO - ลงทะเบียนคำสั่ง !ทดสอบ สำเร็จ
+2025-04-16 20:37:45,644 - __main__ - INFO - ลงทะเบียนคำสั่ง !เกขุน สำเร็จ
+2025-04-16 20:37:45,645 - __main__ - INFO - Saved config to config.json successfully
+2025-04-16 20:37:45,645 - __main__ - INFO - อัปเดตข้อมูลหมวดหมู่และบันทึกลง config.json สำเร็จ
+2025-04-16 20:37:46,246 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:37:46] "[32mGET / HTTP/1.1[0m" 302 -
+2025-04-16 20:37:46,751 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:37:46] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:37:48,315 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:37:48] "GET /servers HTTP/1.1" 200 -
+2025-04-16 20:37:50,972 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:37:50] "GET /chat HTTP/1.1" 200 -
+2025-04-16 20:37:55,149 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:37:55,154 - nlp_processor - INFO - Tokenized input: ['เว', 'รี่', 'กู', 'เ้ด']
+2025-04-16 20:37:55,157 - nlp_processor - INFO - Selected intent: product_inquiry, response: มีทั้ง {product_name} และของดีๆ อีกเพียบ! อยากรู้ตัวไหนเป็นพิเศษมั้ยคะ?
+2025-04-16 20:37:55,170 - nlp_processor - INFO - Saved chat message for user web_user
+2025-04-16 20:37:55,171 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 20:37:55,173 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:37:55] "POST /api/chat HTTP/1.1" 200 -
+2025-04-16 20:37:59,623 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:37:59,624 - nlp_processor - INFO - Tokenized input: ['สนใจ', 'สี', 'เ', 'เด', 'ง']
+2025-04-16 20:37:59,626 - nlp_processor - INFO - Selected intent: product_inquiry, response: มีทั้ง {product_name} และของดีๆ อีกเพียบ! อยากรู้ตัวไหนเป็นพิเศษมั้ยคะ?
+2025-04-16 20:37:59,641 - nlp_processor - INFO - Saved chat message for user web_user
+2025-04-16 20:37:59,641 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 20:37:59,643 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:37:59] "POST /api/chat HTTP/1.1" 200 -
+2025-04-16 20:38:07,307 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:38:07,308 - nlp_processor - INFO - Tokenized input: ['มี', 'ตัว', 'ไหน', 'บ้าง']
+2025-04-16 20:38:07,310 - nlp_processor - INFO - Selected intent: product_inquiry, response: เรามีแพ็กเกจเจ๋งๆ เพียบเลยค่ะ! เช่น {product_name} สนใจตัวไหนบอกมาได้เลยน้า 😄
+2025-04-16 20:38:07,327 - nlp_processor - INFO - Saved chat message for user web_user
+2025-04-16 20:38:07,328 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 20:38:07,332 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:38:07] "POST /api/chat HTTP/1.1" 200 -
+2025-04-16 20:38:09,776 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:38:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:38:13,182 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:38:13,183 - nlp_processor - INFO - Tokenized input: ['เ', 'เพ็ก', 'เกจ', 'อะไร']
+2025-04-16 20:38:13,185 - nlp_processor - INFO - Selected intent: product_inquiry, response: เรามีแพ็กเกจเจ๋งๆ เพียบเลยค่ะ! เช่น {product_name} สนใจตัวไหนบอกมาได้เลยน้า 😄
+2025-04-16 20:38:13,203 - nlp_processor - INFO - Saved chat message for user web_user
+2025-04-16 20:38:13,204 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 20:38:13,206 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:38:13] "POST /api/chat HTTP/1.1" 200 -
+2025-04-16 20:38:19,179 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:38:19,179 - nlp_processor - INFO - Tokenized input: ['ขาย', 'อะไร', 'เนี่ย', 'เรา', 'อะ']
+2025-04-16 20:38:19,182 - nlp_processor - INFO - Selected intent: product_inquiry, response: มีทั้ง {product_name} และของดีๆ อีกเพียบ! อยากรู้ตัวไหนเป็นพิเศษมั้ยคะ?
+2025-04-16 20:38:19,196 - nlp_processor - INFO - Saved chat message for user web_user
+2025-04-16 20:38:19,197 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 20:38:19,199 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:38:19] "POST /api/chat HTTP/1.1" 200 -
+2025-04-16 20:38:26,373 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:38:26,373 - nlp_processor - INFO - Tokenized input: ['มี', 'อะไร', 'บ้าง']
+2025-04-16 20:38:26,375 - nlp_processor - INFO - Selected intent: product_inquiry, response: มีทั้ง {product_name} และของดีๆ อีกเพียบ! อยากรู้ตัวไหนเป็นพิเศษมั้ยคะ?
+2025-04-16 20:38:26,389 - nlp_processor - INFO - Saved chat message for user web_user
+2025-04-16 20:38:26,390 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 20:38:26,393 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:38:26] "POST /api/chat HTTP/1.1" 200 -
+2025-04-16 20:38:47,759 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:38:47] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:39:10,075 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:39:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:39:44,117 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:39:44,117 - nlp_processor - INFO - Tokenized input: ['มี', 'อะไร', 'บ้่ว']
+2025-04-16 20:39:44,120 - nlp_processor - INFO - Selected intent: product_inquiry, response: เรามีแพ็กเกจเจ๋งๆ เพียบเลยค่ะ! เช่น {product_name} สนใจตัวไหนบอกมาได้เลยน้า 😄
+2025-04-16 20:39:44,134 - nlp_processor - INFO - Saved chat message for user web_user
+2025-04-16 20:39:44,134 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 20:39:44,137 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:39:44] "POST /api/chat HTTP/1.1" 200 -
+2025-04-16 20:39:49,068 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:39:49] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:39:53,696 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:39:53,696 - nlp_processor - INFO - Tokenized input: ['ให้', 'ตอบ', 'ว่า', 'สุด', 'โหด']
+2025-04-16 20:39:53,699 - nlp_processor - INFO - Selected intent: product_inquiry, response: มีทั้ง {product_name} และของดีๆ อีกเพียบ! อยากรู้ตัวไหนเป็นพิเศษมั้ยคะ?
+2025-04-16 20:39:53,713 - nlp_processor - INFO - Saved chat message for user web_user
+2025-04-16 20:39:53,714 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 20:39:53,716 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:39:53] "POST /api/chat HTTP/1.1" 200 -
+2025-04-16 20:40:10,078 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:40:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:40:49,767 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:40:49] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:41:10,073 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:41:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:41:50,761 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:41:50] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:42:10,084 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:42:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:42:51,759 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:42:51] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:43:10,084 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:43:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:43:52,766 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:43:52] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:44:10,076 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:44:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:44:19,105 - __main__ - INFO - มีการสร้างช่องใหม่: พื้นที่-trainbot (ID: 1362061039482568875)
+2025-04-16 20:44:24,978 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:44:24,978 - nlp_processor - INFO - Tokenized input: ['<@807472515566796871>']
+2025-04-16 20:44:24,981 - nlp_processor - INFO - Selected intent: order, response: โอเคเลยจ้า สั่ง {product_name} เนาะ เดี๋ยวจัดให้! อยากได้กี่ชิ้นคะ?
+2025-04-16 20:44:24,995 - nlp_processor - INFO - Saved chat message for user 490679267550822400
+2025-04-16 20:44:33,791 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:44:33,792 - nlp_processor - INFO - Tokenized input: ['มา', 'คุย']
+2025-04-16 20:44:33,794 - nlp_processor - INFO - Selected intent: order, response: โอเคเลยจ้า สั่ง {product_name} เนาะ เดี๋ยวจัดให้! อยากได้กี่ชิ้นคะ?
+2025-04-16 20:44:33,803 - nlp_processor - INFO - Saved chat message for user 490679267550822400
+2025-04-16 20:44:53,756 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:44:53] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:44:58,546 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:44:58,546 - nlp_processor - INFO - Tokenized input: ['สวัสดี', 'ครับ']
+2025-04-16 20:44:58,548 - nlp_processor - INFO - Selected intent: greeting, response: หวัดดีจ้า! อยากได้อะไรดีๆ มาเลือกกันเลย! ✨
+2025-04-16 20:44:58,559 - nlp_processor - INFO - Saved chat message for user 807472515566796871
+2025-04-16 20:45:10,089 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:45:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:45:18,041 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:45:18,041 - nlp_processor - INFO - Tokenized input: ['มี', 'อะไร', 'ให้', 'เลือก', 'บ้าง']
+2025-04-16 20:45:18,045 - nlp_processor - INFO - Selected intent: product_inquiry, response: มีทั้ง {product_name} และของดีๆ อีกเพียบ! อยากรู้ตัวไหนเป็นพิเศษมั้ยคะ?
+2025-04-16 20:45:18,054 - nlp_processor - INFO - Saved chat message for user 807472515566796871
+2025-04-16 20:45:48,810 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:45:48,811 - nlp_processor - INFO - Tokenized input: ['<@289384765918937088>', '  ', 'มา', 'ช่วย', 'เท', 'รน', 'บอ', 'ท', 'กู', 'หน่อย']
+2025-04-16 20:45:48,817 - nlp_processor - INFO - Selected intent: order, response: เยี่ยมเลยค่ะ! อยากสั่ง {product_name} ใช่มั้ยคะ? บอกจำนวนหรือรายละเอียดเพิ่มมาได้เลย 😊
+2025-04-16 20:45:48,826 - nlp_processor - INFO - Saved chat message for user 490679267550822400
+2025-04-16 20:45:54,765 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:45:54] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:46:10,083 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:46:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:46:16,338 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:46:16,338 - nlp_processor - INFO - Tokenized input: ['ตอนนี้', 'มี', 'เกม', 'อะไร', ' ', 'น่า', 'เล่น', 'บ้าง']
+2025-04-16 20:46:16,344 - nlp_processor - INFO - Selected intent: product_inquiry, response: มีทั้ง {product_name} และของดีๆ อีกเพียบ! อยากรู้ตัวไหนเป็นพิเศษมั้ยคะ?
+2025-04-16 20:46:16,352 - nlp_processor - INFO - Saved chat message for user 807472515566796871
+2025-04-16 20:46:27,785 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:46:27,785 - nlp_processor - INFO - Tokenized input: ['จะ', 'ได้', 'จ้าง', 'ฟาม']
+2025-04-16 20:46:27,788 - nlp_processor - INFO - Selected intent: product_inquiry, response: เรามีแพ็กเกจเจ๋งๆ เพียบเลยค่ะ! เช่น {product_name} สนใจตัวไหนบอกมาได้เลยน้า 😄
+2025-04-16 20:46:27,797 - nlp_processor - INFO - Saved chat message for user 807472515566796871
+2025-04-16 20:46:55,752 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:46:55] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:47:10,093 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:47:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:47:26,146 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:47:26,147 - nlp_processor - INFO - Tokenized input: ['ปกติ', 'คนอื่น', 'จะ', 'จ้าง', 'ให้', 'ฟาม', 'อะไร', 'เป็นส่วนใหญ่']
+2025-04-16 20:47:26,154 - nlp_processor - INFO - Selected intent: product_inquiry, response: มีทั้ง {product_name} และของดีๆ อีกเพียบ! อยากรู้ตัวไหนเป็นพิเศษมั้ยคะ?
+2025-04-16 20:47:26,164 - nlp_processor - INFO - Saved chat message for user 807472515566796871
+2025-04-16 20:47:56,765 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:47:56] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:48:10,071 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:48:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:48:42,435 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:48:42,436 - nlp_processor - INFO - Tokenized input: ['ใน', ' ', 'anime', ' ', 'vangard', ' ', 'เขา', 'ใช้', 'ตัว', 'อะไร', 'กัน', 'บ้าง', ' ', 'เเนะ', 'นำ', 'หน่อย']
+2025-04-16 20:48:42,446 - nlp_processor - INFO - Selected intent: product_inquiry, response: เรามีแพ็กเกจเจ๋งๆ เพียบเลยค่ะ! เช่น {product_name} สนใจตัวไหนบอกมาได้เลยน้า 😄
+2025-04-16 20:48:42,455 - nlp_processor - INFO - Saved chat message for user 807472515566796871
+2025-04-16 20:48:57,769 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:48:57] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:49:10,078 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:49:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:49:39,503 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:49:39,503 - nlp_processor - INFO - Tokenized input: ['ปกติ', 'พี่', 'ฟาม', 'นาน', 'ไหม']
+2025-04-16 20:49:39,507 - nlp_processor - INFO - Selected intent: product_inquiry, response: มีทั้ง {product_name} และของดีๆ อีกเพียบ! อยากรู้ตัวไหนเป็นพิเศษมั้ยคะ?
+2025-04-16 20:49:39,516 - nlp_processor - INFO - Saved chat message for user 807472515566796871
+2025-04-16 20:49:58,757 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:49:58] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:50:05,263 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:50:05,264 - nlp_processor - INFO - Tokenized input: ['1', ' ', 'วัน', 'พี่', 'คิด', 'เท่าไหร่', 'ครับ']
+2025-04-16 20:50:05,269 - nlp_processor - INFO - Selected intent: greeting, response: สวัสดีค่า สนใจสินค้าหรือโปรโมชันพิเศษวันนี้มั้ยคะ?
+2025-04-16 20:50:05,278 - nlp_processor - INFO - Saved chat message for user 807472515566796871
+2025-04-16 20:50:10,080 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:50:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:50:17,750 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 20:50:17,750 - nlp_processor - INFO - Tokenized input: ['ขอ', 'ดู', 'ราคา', 'หน่อย', 'ครับ']
+2025-04-16 20:50:17,754 - nlp_processor - INFO - Selected intent: greeting, response: หวัดดีจ้า! อยากได้อะไรดีๆ มาเลือกกันเลย! ✨
+2025-04-16 20:50:17,763 - nlp_processor - INFO - Saved chat message for user 807472515566796871
+2025-04-16 20:50:59,769 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:50:59] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:51:10,080 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:51:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:52:00,757 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:52:00] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:52:10,077 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:52:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:53:01,760 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:53:01] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:53:10,100 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:53:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:54:02,757 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:54:02] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:54:10,097 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:54:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:55:03,760 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:55:03] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:55:10,077 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:55:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:56:04,759 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:56:04] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:56:10,090 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:56:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:57:05,766 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:57:05] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:57:10,078 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:57:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:58:06,758 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:58:06] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:58:10,077 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:58:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 20:59:07,757 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:59:07] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 20:59:10,070 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 20:59:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:00:08,761 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:00:08] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:00:10,076 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:00:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:01:10,070 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:01:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:01:10,070 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:01:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:02:09,771 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:02:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:02:10,069 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:02:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:03:10,083 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:03:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:03:10,085 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:03:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:04:09,774 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:04:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:04:10,073 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:04:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:04:52,302 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-04-16 21:04:52,342 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 21:04:52,345 - __main__ - INFO - [STDOUT] Starting bot with TOKEN: MTM1OTE1MD...
+2025-04-16 21:04:52,345 - __main__ - INFO - [STDOUT] Using GUILD_ID: 1327283114258731151
+2025-04-16 21:04:52,346 - discord.client - INFO - logging in using static token
+2025-04-16 21:04:52,348 - __main__ - INFO - [STDOUT] * Serving Flask app 'app'
+2025-04-16 21:04:52,349 - __main__ - INFO - [STDOUT] * Debug mode: on
+2025-04-16 21:04:52,383 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 21:04:52,384 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-16 21:04:53,956 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 33f0f939dab5d4f0a8758fc7180c1ccb).
+2025-04-16 21:04:55,974 - __main__ - INFO - บอทเริ่มทำงานแล้ว: บอทสุดเก#4352
+2025-04-16 21:04:55,974 - __main__ - INFO - ลงทะเบียนคำสั่ง !เริ่ม สำเร็จ
+2025-04-16 21:04:55,974 - __main__ - INFO - ลงทะเบียนคำสั่ง !รอ สำเร็จ
+2025-04-16 21:04:55,975 - __main__ - INFO - ลงทะเบียนคำสั่ง !ทดสอบ สำเร็จ
+2025-04-16 21:04:55,975 - __main__ - INFO - ลงทะเบียนคำสั่ง !เกขุน สำเร็จ
+2025-04-16 21:04:55,976 - nlp_processor - INFO - Saved config.json successfully
+2025-04-16 21:04:55,976 - __main__ - INFO - อัปเดตข้อมูลหมวดหมู่และบันทึกลง config.json สำเร็จ
+2025-04-16 21:05:00,168 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:05:00] "[32mGET / HTTP/1.1[0m" 302 -
+2025-04-16 21:05:04,991 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:05:04] "GET /servers HTTP/1.1" 200 -
+2025-04-16 21:05:07,777 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:05:07] "GET /settings/commands HTTP/1.1" 200 -
+2025-04-16 21:05:09,773 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:05:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:05:10,076 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:05:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:05:27,169 - discord.ext.commands.bot - ERROR - Ignoring exception in command teach
+Traceback (most recent call last):
+  File "C:\DEMOCOMPLETEBOT จัดการส่วนเพิ่มคำสั่งเรียบร้อย\DEMOCOMPLETEBOT\discord-bot-management\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1366, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\DEMOCOMPLETEBOT จัดการส่วนเพิ่มคำสั่งเรียบร้อย\DEMOCOMPLETEBOT\discord-bot-management\venv\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\DEMOCOMPLETEBOT จัดการส่วนเพิ่มคำสั่งเรียบร้อย\DEMOCOMPLETEBOT\discord-bot-management\venv\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\DEMOCOMPLETEBOT จัดการส่วนเพิ่มคำสั่งเรียบร้อย\DEMOCOMPLETEBOT\discord-bot-management\venv\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\DEMOCOMPLETEBOT จัดการส่วนเพิ่มคำสั่งเรียบร้อย\DEMOCOMPLETEBOT\discord-bot-management\venv\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: intent is a required argument that is missing.
+2025-04-16 21:06:10,069 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:06:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:06:10,069 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:06:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:07:09,774 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:07:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:07:10,075 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:07:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:08:10,073 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:08:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:08:10,074 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:08:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:09:09,785 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:09:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:09:10,086 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:09:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:10:10,093 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:10:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:10:10,097 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:10:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:11:09,779 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:11:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:11:10,083 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:11:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:11:22,139 - nlp_processor - INFO - Loaded config.json successfully
+2025-04-16 21:11:22,143 - nlp_processor - INFO - Tokenized input: ['ต้องการ', 'ฟาร์ม', ' ', 'AFK', ' ', 'Arise']
+2025-04-16 21:11:22,148 - nlp_processor - INFO - Selected intent: product_inquiry, response: เรามีแพ็กเกจเจ๋งๆ เพียบเลยค่ะ! เช่น {product_name} สนใจตัวไหนบอกมาได้เลยน้า 😄
+2025-04-16 21:11:22,148 - nlp_processor - INFO - Added keyword 'ฟาร์ม' to intent 'product_inquiry'
+2025-04-16 21:11:22,148 - nlp_processor - INFO - Added keyword 'AFK' to intent 'product_inquiry'
+2025-04-16 21:11:22,149 - nlp_processor - INFO - Added keyword 'Arise' to intent 'product_inquiry'
+2025-04-16 21:11:22,150 - nlp_processor - INFO - Saved config.json successfully
+2025-04-16 21:11:22,159 - nlp_processor - INFO - Saved chat message for user 490679267550822400
+2025-04-16 21:11:51,308 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 21:11:51,308 - __main__ - ERROR - เกิดข้อผิดพลาดในคำสั่ง !teach: 'NoneType' object is not subscriptable
+2025-04-16 21:12:10,080 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:12:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:12:10,080 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:12:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:12:21,829 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 21:12:21,829 - __main__ - ERROR - เกิดข้อผิดพลาดในคำสั่ง !teach: 'NoneType' object is not subscriptable
+2025-04-16 21:13:09,771 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:13:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:13:10,084 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:13:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:13:50,259 - __main__ - INFO - Loaded config.json successfully
+2025-04-16 21:13:50,260 - __main__ - ERROR - เกิดข้อผิดพลาดในคำสั่ง !teach: 'NoneType' object is not subscriptable
+2025-04-16 21:14:10,066 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:14:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:14:10,067 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:14:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:15:09,793 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:15:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:15:10,088 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:15:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:16:10,081 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:16:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:16:10,082 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:16:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:17:09,764 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:17:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:17:10,073 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:17:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:18:10,086 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:18:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:18:10,086 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:18:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:19:09,774 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:19:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:19:10,083 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:19:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:20:10,090 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:20:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:20:10,091 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:20:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:21:09,789 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:21:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:21:10,087 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:21:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:22:10,082 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:22:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:22:10,082 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:22:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:23:09,779 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:23:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:23:10,088 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:23:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:24:10,089 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:24:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:24:10,089 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:24:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:25:09,767 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:25:09] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:25:10,072 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:25:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
+2025-04-16 21:26:10,073 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:26:10] "GET /api/server-status HTTP/1.1" 200 -
+2025-04-16 21:26:10,083 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2025 21:26:10] "GET /api/logs?page=1&per_page=50 HTTP/1.1" 200 -
